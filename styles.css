@@ -142,7 +142,6 @@ footer{
 /* TO DO: Part 1: Check heading contrast and adjust as necessary */
 h1, h2, h3{
     font-family: var(--heading-fonts);
-    font-optical-sizing: auto;
     font-weight: 800;
     font-style: normal;
     color: var(--olive);
