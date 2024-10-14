@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Accessible CSS Basics</title>
+        <meta name="author" content="Prof. Barnett">
+        <meta name="description" content="Learn more about the styles and settings to keep in mind as you write CSS for an accessible responsive website.">
+
+        <!-- Favicon -->
+        <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
+        <link rel="icon" href="images/favicon.ico" type="image/x-icon">
+
+        <!-- Google Fonts -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Maitree:wght@200;400;600;700&family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+
+        <!-- Stylesheets -->
+        <link href="styles.css" rel="stylesheet">
+    </head>
+
+    <body id="top">
+        <a href="#main" id="skip">Skip to Main Content</a>
+        <header>
+            <h1>Accessible CSS Basics</h1>
+            <nav aria-label="Main Navigation">
+                <ul>
+                    <li><a href="#contrast">Contrast</a></li>
+                    <li><a href=#text">Text Styling</a></li>
+                    <li><a href="#space">Sizing &amp; Spacing</a></li>
+                    <li><a href="#important">Important Styles</a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <main id="main">
+
+            <!-- TO DO: Follow along as we check and correct any contrast issues on this page -->
+            <section id="contrast">
+                <!-- Read more at MDN: https://developer.mozilla.org/en-US/docs/Web/Accessibility/Understanding_WCAG/Perceivable/Color_contrast -->
+                <h2>Contrast</h2>
+                <p>Ensuring that there is enough contrast between the color of your text and color of the background is important fo readability. Generally, younger people prefer and find a dark mode website (light text on a dark background) is easier to read, while older readers prefer and have an easier time with the opposite. If you know who the users of your site will be, you can consider that when choosing colors.</p>
+                <p>There are some WCAG guidelines to keep in mind:</p>
+                <details>
+                    <summary>Body Text</summary>
+                    <p>Minimum Ratio (AA): 4.5:1</p>
+                    <p>Enhanced Ratio (AAA): 7:1</p>
+                </details>
+
+                <details>
+                    <summary>Large-Scale Text</summary>
+                    <p>(This refers to text that is 120-150% larger than body text)</p>
+                    <p>Minimum Ratio (AA): 3:1</p>
+                    <p>Enhanced Ratio (AAA): 4.5:1</p>
+                </details>
+
+                <details>
+                    <summary>Other Elements</summary>
+                    <p>(This refers to active interface components and graphical objects such as icons and graphs)</p>
+                    <p>Minimum Ratio (AA): 3:1</p>
+                    <p>Enhanced Ratio (AAA): Not Defined</p>
+                </details>
+            </section>
+
+            <!-- TO DO: Follow along as we review the text styles on the page and update them as necessary -->
+            <section id="text">
+                <h2>Text Styling</h2>
+                <p>There are some other important things to remember about styling text to make sure that it is readable and accessible to your users.</p>
+
+                <details>
+                    <summary>Text Size</summary>
+                    <p>Your text size at a minimum should be 16 pixels or <strong>1rem</strong> (preferred). By default most of the text on your page will display at this size, so it's important to remember not to make the font size smaller. You should also remember that it is better to use ems or rems than pixels for text sizing as those unites respect user preferences for larger font sizes by default.</p>
+                </details>
+
+                <details>
+                    <summary>Line Width</summary>
+                    <p>After a point, a line of text becomes too difficult to read when displayed on a wider screen. It's easier for a user to get lost when line widths are too wide. Aim for a maximum text width of <strong>approximately 50-75 characters</strong>.</p>
+                </details>
+
+                <details>
+                    <summary>Alignment</summary>
+                    <p>For text that displays on multiple lines (like a paragraph), ensure that you <strong>align it to the left</strong> (in English, we read from left to right). Just like lines of text that are too wide harm usability and readability, so does center alignment on text.</p>
+                </details>
+
+                <details>
+                    <summary>Line Height</summary>
+                    <p>The line height on your text indicates the amount of space between each line of text. After the CSS Reset, it is reset to a value of one, but it should be somewhere between <strong>1.35 and 1.5</strong> for readability. This can change depending on the font, and you do not have to include units.</p>
+                </details>
+
+                <details>
+                    <summary>Font Readability</summary>
+                    <p>Speaking of fonts, make sure you choose font families that are easy to read. Choosing something that is too decorative, or that displays well only at very large sizes makes your site more difficult to read. Imagine driving by a small sign with tiny text and a cursive font. Had a more readable font been used or made larger, you might actually be able to read that sign.</p>
+                </details>
+
+            </section>
+
+            <!-- TO DO: Follow along as we ensure that the clickable elements on the page are sized and spaced correctly. These will be the links/icons in the footer -->
+            <section id="space">
+                <h2>Sizing &amp; Spacing Elements</h2>
+                <p>When you're creating a website that will be viewed on any device, from a smart phone to a large monitor, there are things to consider when styling for the smallest screens. Users interact with touch screens differently than they do with a mouse or track pad.</p>
+
+                <p>On those smallest screens, interactive elements needs to be large enough for users to tap on with a finger or thumb, spaced enough that they don't accidentally tap on the wrong thing, and as close as possible to the area of the screen they can reach with a thumb.</p>
+
+                <ul>
+                    <li>
+                        <a href="https://www.w3.org/WAI/about/groups/agwg/">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-accessible-off-filled filled" width="44" height="44" viewBox="0 0 24 24" stroke-width="1.5" stroke="#000000" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                                <path d="M17 3.34a10 10 0 1 1 -14.995 8.984l-.005 -.324l.005 -.324a10 10 0 0 1 14.995 -8.336zm-1.051 6.844a1 1 0 0 0 -1.152 -.663l-.113 .03l-2.684 .895l-2.684 -.895l-.113 -.03a1 1 0 0 0 -.628 1.884l.109 .044l2.316 .771v.976l-1.832 2.75l-.06 .1a1 1 0 0 0 .237 1.21l.1 .076l.101 .06a1 1 0 0 0 1.21 -.237l.076 -.1l1.168 -1.752l1.168 1.752l.07 .093a1 1 0 0 0 1.653 -1.102l-.059 -.1l-1.832 -2.75v-.977l2.316 -.771l.109 -.044a1 1 0 0 0 .524 -1.221zm-3.949 -4.184a1.5 1.5 0 1 0 0 3a1.5 1.5 0 0 0 0 -3z" stroke-width="0" />
+                            </svg>
+                            The WCAG website
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://www.smashingmagazine.com/2022/02/fitts-law-touch-era/">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-target" width="44" height="44" viewBox="0 0 24 24" stroke-width="1.5" stroke="#000000" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                                <path d="M12 12m-1 0a1 1 0 1 0 2 0a1 1 0 1 0 -2 0" />
+                                <path d="M12 12m-5 0a5 5 0 1 0 10 0a5 5 0 1 0 -10 0" />
+                                <path d="M12 12m-9 0a9 9 0 1 0 18 0a9 9 0 1 0 -18 0" />
+                            </svg>
+                            Fitts' Law in the Touch Era
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://ishadeed.com/article/clickable-area/">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-pointer-filled filled" width="44" height="44" viewBox="0 0 24 24" stroke-width="1.5" stroke="#000000" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                                <path d="M3.039 4.277l3.904 13.563c.185 .837 .92 1.516 1.831 1.642l.17 .016a2.2 2.2 0 0 0 1.982 -1.006l.045 -.078l1.4 -2.072l4.05 4.05a2.067 2.067 0 0 0 2.924 0l1.047 -1.047c.388 -.388 .606 -.913 .606 -1.461l-.008 -.182a2.067 2.067 0 0 0 -.598 -1.28l-4.047 -4.048l2.103 -1.412c.726 -.385 1.18 -1.278 1.053 -2.189a2.2 2.2 0 0 0 -1.701 -1.845l-13.524 -3.89a1 1 0 0 0 -1.236 1.24z" stroke-width="0" />
+                            </svg>
+                            Enhancing The Clickable Area Size
+                        </a>
+                    </li>
+                </ul>
+
+                <details>
+                    <summary>Element Size</summary>
+                    <p>Without a mouse, clicking on small elements can be difficult. Small clickable elements should be <strong>at least 42 pixels</strong> (square or rounded). Medium clickable elements should be 60 pixels, and large elements should be 72 pixels.</p>
+                </details>
+
+                <details>
+                    <summary>Element Spacing</summary>
+                    <p>Ensuring that your elements aren't crowded on the page also makes them easier to click. The spacing will depend on the size of the element, where <strong>smaller elements need more space between them and larger elements need less</strong>.</p>
+                </details>
+
+                <details>
+                    <summary>Element Placement</summary>
+                    <p>When using a smart phone, there are areas that are easy to reach while holding the device in one hand, and areas that are difficult to reach in the same situation. Placing important clickable elements in places where the user doesn't have to strain to reach them is a good practice.</p>
+                </details>
+
+            </section>
+
+            <!-- TO DO: Follow along as we review, add, and adjust some the focus and hover styles on the page -->
+            <section id="important">
+                <h2>Other Important Styles</h2>
+                <p>Some styles are removed by the CSS Reset code, (and sometimes developers remove these styles and forget to replace them). These styles are important for usability and accessibility, so you will want to be sure to include them and test them to make sure they work.</p>
+
+                <details>
+                    <summary>Focus Styles</summary>
+                    <!-- Focus: https://developer.mozilla.org/en-US/docs/Web/CSS/:focus -->
+                    <p><strong>Focus styles</strong> indicate to the user which element on they page they are interacting with from their keyboard. Focus should only work for interactive elements (links, buttons, form inputs, details/summary). These use an outline by default, but can be styled differently than the default. An outline on an element does not take up space on the page like a border does. It is not part of the box model.</p>
+                </details>
+
+                <details>
+                    <summary>Hover Styles</summary>
+                    <p>Also for interactive elements (those that the user can click on, like links and buttons), <strong>hover styles</strong> are important. The hover indicates to the user that the element is interactive. These styles should be obvious to the user when hovering. If they are too subtle they can be missed.</p> 
+                </details>
+            </section>
+
+        </main>
+
+        <footer>
+            <section>
+                <h2 class="sr-only">Coding Tools</h2>
+                <a href="https://github.com/" aria-label="GitHub">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-github" width="22" height="22" viewBox="0 0 24 24" stroke-width="1.5" stroke="#000000" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                        <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                        <path d="M9 19c-4.3 1.4 -4.3 -2.5 -6 -3m12 5v-3.5c0 -1 .1 -1.4 -.5 -2c2.8 -.3 5.5 -1.4 5.5 -6a4.6 4.6 0 0 0 -1.3 -3.2a4.2 4.2 0 0 0 -.1 -3.2s-1.1 -.3 -3.5 1.3a12.3 12.3 0 0 0 -6.2 0c-2.4 -1.6 -3.5 -1.3 -3.5 -1.3a4.2 4.2 0 0 0 -.1 3.2a4.6 4.6 0 0 0 -1.3 3.2c0 4.6 2.7 5.7 5.5 6c-.6 .6 -.6 1.2 -.5 2v3.5" />
+                    </svg>
+                </a>
+                <a href="https://codepen.io/" aria-label="Code Pen">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-codepen" width="22" height="22" viewBox="0 0 24 24" stroke-width="1.5" stroke="#000000" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                        <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                        <path d="M3 15l9 6l9 -6l-9 -6l-9 6" />
+                        <path d="M3 9l9 6l9 -6l-9 -6l-9 6" />
+                        <path d="M3 9l0 6" />
+                        <path d="M21 9l0 6" />
+                        <path d="M12 3l0 6" />
+                        <path d="M12 15l0 6" />
+                    </svg>
+                </a>
+
+                <a href="https://code.visualstudio.com/" aria-label="Visual Studio Code">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-vscode" width="22" height="22" viewBox="0 0 24 24" stroke-width="1.5" stroke="#000000" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                        <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                        <path d="M16 3v18l4 -2.5v-13z" />
+                        <path d="M9.165 13.903l-4.165 3.597l-2 -1l4.333 -4.5m1.735 -1.802l6.932 -7.198v5l-4.795 4.141" />
+                        <path d="M16 16.5l-11 -10l-2 1l13 13.5" />
+                    </svg>
+                </a>
+            </section>
+            <p>Copyright &copy; <span>2024</span> - Jessica Barnett</p>
+        </footer>
+    </body>
+</html>
